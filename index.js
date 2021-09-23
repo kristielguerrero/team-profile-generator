@@ -1,16 +1,16 @@
 //Example that Henry wrote
-function createHTML(allEmployees) {
-  let allCards = " ";
-  allEmployees.forEach((employee) => {
-    allCards + -renderCards(employee);
-  });
+// function createHTML(allEmployees) {
+//   let allCards = " ";
+//   allEmployees.forEach((employee) => {
+//     allCards + -renderCards(employee);
+//   });
 
-  return (
-    <html>
-      <body>${renderCards()}</body>
-    </html>
-  );
-}
+//   return (
+//     <html>
+//       <body>${renderCards()}</body>
+//     </html>
+//   );
+// }
 
 // function renderCard (empolyee) {
 //     switch(employee.getRole()) {
