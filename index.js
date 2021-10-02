@@ -36,21 +36,37 @@ function addEmployee() {
 // }
 
 function addManager() {
-  inquirer.prompt([
-    {
-      type: "input",
-      name: "manName",
-      message: "What is the team memember's name?",
-    },
-    {
-      type: "number",
-      name: "manID",
-      message: "What is the team memember's ID number?",
-    },
-    {
-      type: "input",
-      name: "manEmail",
-      message: "What is the team memember's email?",
-    },
-  ]);
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "manName",
+        message: "What is the team memember's name?",
+      },
+      {
+        type: "number",
+        name: "manID",
+        message: "What is the team memember's ID number?",
+      },
+      {
+        type: "input",
+        name: "manEmail",
+        message: "What is the team memember's email?",
+      },
+      {
+        type: "input",
+        name: "manEmail",
+        message: "What is the team memember's office number?",
+      },
+    ])
+    .then((answers) => {
+      const manager = new Manager(
+        manager.name,
+        manager.id,
+        manager.email,
+        manager.officeNumber
+      );
+      console.log(manager);
+      addEmployee();
+    });
 }
