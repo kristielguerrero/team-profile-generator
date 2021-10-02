@@ -1,5 +1,7 @@
+// Required packages
 const inquirer = require("inquirer");
 const fs = require("inquirer");
+
 const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -29,6 +31,26 @@ function addEmployee() {
     });
 }
 
-function addEmployee() {
-  inquirer.prompt(add);
+// function addEmployee() {
+//   inquirer.prompt(add);
+// }
+
+function addManager() {
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "manName",
+      message: "What is the team memember's name?",
+    },
+    {
+      type: "number",
+      name: "manID",
+      message: "What is the team memember's ID number?",
+    },
+    {
+      type: "input",
+      name: "manEmail",
+      message: "What is the team memember's email?",
+    },
+  ]);
 }
