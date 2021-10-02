@@ -118,6 +118,36 @@ function addEngineer() {
     });
 }
 
+function addIntern() {
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "internName",
+      message: "What is the team member's name?",
+    },
+    {
+      type: "input",
+      name: "internId",
+      message: "What is the team member's ID?",
+    },
+    {
+      type: "input",
+      name: "internEmail",
+      message: "What is the team member's email?",
+    },
+    {
+      type: "input",
+      name: "internSchool",
+      message: "What is the team member's school/program?",
+    },
+    {
+      type: "input",
+      name: "internGithub",
+      message: "What is the team member's github?",
+    },
+  ]);
+}
+
 function generateHTML(teamEmployees) {
   fs.writeFileSync("./dist/index.html", createPage(teamEmployees));
 }
