@@ -26,7 +26,17 @@ function addEmployee() {
     .then((choices) => {
       switch (choices.teamRole) {
         case "Manager":
-          addManager;
+          addManager();
+          break;
+        case "Engineer":
+          addEngineer();
+          break;
+        case "Inter":
+          addIntern();
+          break;
+        case "No other employee":
+          generateHTML(teamEmployees);
+          break;
       }
     });
 }
@@ -60,13 +70,56 @@ function addManager() {
       },
     ])
     .then((answers) => {
-      const manager = new Manager(
-        manager.name,
-        manager.id,
-        manager.email,
-        manager.officeNumber
+      const m = new Manager(
+        answers.mName,
+        answers.mId,
+        answers.mEmail,
+        answers.mOfficeNumber
       );
+      teamEmployees.push(e);
       console.log(manager);
       addEmployee();
     });
 }
+
+function addEngineer() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "engineerName",
+        message: "What is the team memember's name?",
+      },
+      {
+        type: "input",
+        name: "engineerID",
+        message: "What is the team memember's ID?",
+      },
+      {
+        type: "input",
+        name: "engineerEmail",
+        message: "What is the team memember's email?",
+      },
+      {
+        type: "input",
+        name: "engineerGithub",
+        message: "What is the team memember's Github name?",
+      },
+    ])
+    .then((answers) => {
+      const e = new Engineer(
+        answers.eName,
+        answers.eId,
+        answers.eEmail,
+        answers.eGithub
+      );
+      teamEmployees.push(e);
+      addEmployee();
+    });
+}
+
+function generateHTML(teamEmployees) {
+  fs.writeFileSync("./dist/index.html", createPage(teamEmployees));
+}
+
+init();
