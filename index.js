@@ -34,7 +34,7 @@ function addEmployee() {
         case "Inter":
           addIntern();
           break;
-        case "No other employee":
+        case "No other employees":
           generateHTML(teamEmployees);
           break;
       }
@@ -76,8 +76,8 @@ function addManager() {
         answers.mEmail,
         answers.mOfficeNumber
       );
-      teamEmployees.push(e);
-      console.log(manager);
+      teamEmployees.push(m);
+      console.log("Added to the team!");
       addEmployee();
     });
 }
@@ -114,38 +114,51 @@ function addEngineer() {
         answers.eGithub
       );
       teamEmployees.push(e);
+      console.log("Added to the team!");
       addEmployee();
     });
 }
 
 function addIntern() {
-  inquirer.prompt([
-    {
-      type: "input",
-      name: "internName",
-      message: "What is the team member's name?",
-    },
-    {
-      type: "input",
-      name: "internId",
-      message: "What is the team member's ID?",
-    },
-    {
-      type: "input",
-      name: "internEmail",
-      message: "What is the team member's email?",
-    },
-    {
-      type: "input",
-      name: "internSchool",
-      message: "What is the team member's school/program?",
-    },
-    {
-      type: "input",
-      name: "internGithub",
-      message: "What is the team member's github?",
-    },
-  ]);
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "internName",
+        message: "What is the team member's name?",
+      },
+      {
+        type: "input",
+        name: "internId",
+        message: "What is the team member's ID?",
+      },
+      {
+        type: "input",
+        name: "internEmail",
+        message: "What is the team member's email?",
+      },
+      {
+        type: "input",
+        name: "internSchool",
+        message: "What is the team member's school/program?",
+      },
+      {
+        type: "input",
+        name: "internGithub",
+        message: "What is the team member's github?",
+      },
+    ])
+    .then((answers) => {
+      const i = new Intern(
+        answers.iName,
+        answers.iId,
+        answers.iEmail,
+        answers.iSchool
+      );
+      teamEmployees.push(i);
+      console.log("Added to the team!");
+      addEmployee();
+    });
 }
 
 function generateHTML(teamEmployees) {
