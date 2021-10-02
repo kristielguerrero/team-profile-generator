@@ -6,8 +6,8 @@ A Node.js application using the command line to take information and create a HT
 
 ## Contributors / Contact
 
-Project repository: https://github.com/kristielguerrero/team-profile-generator
-Video walkthrough: https://watch.screencastify.com/v/avWcR4ePQs5Cnsg12CU4
+- Project repository: https://github.com/kristielguerrero/team-profile-generator
+- Video walkthrough: https://watch.screencastify.com/v/avWcR4ePQs5Cnsg12CU4
 
 - Kristiel Guerrero
 - Github: kristielguerrero (https://github.com/kristielguerrero)
