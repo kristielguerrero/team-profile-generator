@@ -43,8 +43,36 @@ function renderCard(employee){
                       <li class="list-group-item">Github: ${employee.getGithub()}</li>
                   </ul>
               </div>
-        
         `
+        break; 
+
+        case "Manager": 
+          return `<div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="card" style="width: 18rem;">
+              <div class="card-header primary">
+                  <h3 class="card-header">${employee.getName()}<br /><br />${employee.getRole()}</h3>
+              </div>
+              <ul class="list-group list-group-flush">
+                  <li class="list-group-item">ID: ${employee.getID()}</li>
+                  <li class="list-group-item">Email: ${employee.getEmail()}</li>
+                  <li class="list-group-item">Github: ${employee.getOfficeNumber()}</li>
+              </ul>
+          </div>`; 
+          break; 
+        
+          case "Intern": 
+          return `<div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="card" style="width: 18rem;">
+              <div class="card-header primary">
+                  <h3 class="card-header">${employee.getName()}<br /><br />${employee.getRole()}</h3>
+              </div>
+              <ul class="list-group list-group-flush">
+                  <li class="list-group-item">ID: ${employee.getID()}</li>
+                  <li class="list-group-item">Email: ${employee.getEmail()}</li>
+                  <li class="list-group-item">Github: ${employee.getSchool()}</li>
+              </ul>
+          </div>`; 
+          break; 
     }
 }
 
